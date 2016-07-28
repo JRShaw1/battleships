@@ -6,20 +6,20 @@ public class Exersise4 {
 
 		for (int k = 0; k < 2; k++) {
 
-			if (k % 2 <= 0) {
-
+			if (k % 2 <= 0) {                                             // even i = player 1
+                                                                         // odd i = player 2
 				Board board = new Board();
 
 				int[][] grid = board.Board();
 
-				Ship Patrol = new Ship(); // direction, size, x-corad, y-coard
-				int X = Patrol.X(1); //
-				int Y = Patrol.Y(1); //
-				int direction = Patrol.Direction(0); //
-				int size = Patrol.Size(1); // how long after the inital point,
-											// I.E. a patrol boat is two long so
-											// it's size is 1 as the initial
-											// point is already plotted.
+				Ship Patrol = new Ship();                           // direction, size, x-corad, y-coard
+				int X = Patrol.X(1);                               //
+				int Y = Patrol.Y(1);                              //
+				int direction = Patrol.Direction(0);             //
+				int size = Patrol.Size(1);                      // how long after the inital point,
+											                   // I.E. a patrol boat is two long so
+											                  // it's size is 1 as the initial
+											                 // point is already plotted.
 
 				if (direction == 0 && grid[Y][X] == 0 && grid[Y - size][X] <= 0) {
 					grid[Y - size][X] = 1;
@@ -66,10 +66,10 @@ public class Exersise4 {
 				int X = Patrol.X(2);
 				int Y = Patrol.Y(2);
 				int direction = Patrol.Direction(2);
-				int size = Patrol.Size(1); // how long after the inital point,
-											// I.E. a patrol boat is two long so
-											// it's size is 1 as the initial
-											// point is already plotted.
+				int size = Patrol.Size(1);                         // how long after the inital point,
+											                      // I.E. a patrol boat is two long so
+											                     // it's size is 1 as the initial
+											                    // point is already plotted.
 
 				if (direction == 0 && grid[Y][X] == 0 && grid[Y - size][X] <= 0) {
 					grid[Y - size][X] = 1;
