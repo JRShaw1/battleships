@@ -1,16 +1,18 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 
 public class Exersise4 {
 
 	public static void main(String[] args) {
 
+		Board board = new Board();
+
+		int[][] grid1 = board.Board();
+		int[][] grid2 = board.Board();
+		
 		for (int k = 0; k < 2; k++) {
 
 			if (k % 2 <= 0) {                                             // even i = player 1
                                                                          // odd i = player 2
-				Board board = new Board();
-
-				int[][] grid = board.Board();
 
 				Ship Patrol = new Ship();                           // direction, size, x-corad, y-coard
 				int X = Patrol.X(1);                               //
@@ -21,27 +23,28 @@ public class Exersise4 {
 											                  // it's size is 1 as the initial
 											                 // point is already plotted.
 
-				if (direction == 0 && grid[Y][X] == 0 && grid[Y - size][X] <= 0) {
-					grid[Y - size][X] = 1;
-					grid[Y][X] = 1;
+				if (direction == 0 && grid1[Y][X] == 0 
+						&& grid1[Y - size][X] <= 0) {
+					grid1[Y - size][X] = 1;
+					grid1[Y][X] = 1;
 				}
 
-				else if (direction == 1 && grid[Y][X] == 0
-						&& grid[Y + size][X] <= 0) {
-					grid[Y + size][X] = 1;
-					grid[Y][X] = 1;
+				else if (direction == 1 && grid1[Y][X] == 0
+						&& grid1[Y + size][X] <= 0) {
+					grid1[Y + size][X] = 1;
+					grid1[Y][X] = 1;
 				}
 
-				else if (direction == 2 && grid[Y][X] == 0
-						&& grid[Y][X - size] <= 0) {
-					grid[Y][X - size] = 1;
-					grid[Y][X] = 1;
+				else if (direction == 2 && grid1[Y][X] == 0
+						&& grid1[Y][X - size] <= 0) {
+					grid1[Y][X - size] = 1;
+					grid1[Y][X] = 1;
 				}
 
-				else if (direction == 3 && grid[Y][X] == 0
-						&& grid[Y][X + size] <= 0) {
-					grid[Y][X + size] = 1;
-					grid[Y][X] = 1;
+				else if (direction == 3 && grid1[Y][X] == 0
+						&& grid1[Y][X + size] <= 0) {
+					grid1[Y][X + size] = 1;
+					grid1[Y][X] = 1;
 				} else {
 					System.out.println("Can't put a ship there");
 				}
@@ -49,7 +52,7 @@ public class Exersise4 {
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
 
-						System.out.print(grid[i][j]);
+						System.out.print(grid1[i][j]);
 						System.out.print(" ");
 					}
 					System.out.print("\n");
@@ -58,9 +61,6 @@ public class Exersise4 {
 				System.out.print("\n");
 			} else {
 
-				Board board = new Board();
-
-				int[][] grid = board.Board();
 
 				Ship Patrol = new Ship();
 				int X = Patrol.X(2);
@@ -71,27 +71,28 @@ public class Exersise4 {
 											                     // it's size is 1 as the initial
 											                    // point is already plotted.
 
-				if (direction == 0 && grid[Y][X] == 0 && grid[Y - size][X] <= 0) {
-					grid[Y - size][X] = 1;
-					grid[Y][X] = 1;
+				if (direction == 0 && grid2[Y][X] == 0 
+						&& grid2[Y - size][X] <= 0) {
+					grid2[Y - size][X] = 1;
+					grid2[Y][X] = 1;
 				}
 
-				else if (direction == 1 && grid[Y][X] == 0
-						&& grid[Y + size][X] <= 0) {
-					grid[Y + size][X] = 1;
-					grid[Y][X] = 1;
+				else if (direction == 1 && grid2[Y][X] == 0
+						&& grid2[Y + size][X] <= 0) {
+					grid2[Y + size][X] = 1;
+					grid2[Y][X] = 1;
 				}
 
-				else if (direction == 2 && grid[Y][X] == 0
-						&& grid[Y][X - size] <= 0) {
-					grid[Y][X - size] = 1;
-					grid[Y][X] = 1;
+				else if (direction == 2 && grid2[Y][X] == 0
+						&& grid2[Y][X - size] <= 0) {
+					grid2[Y][X - size] = 1;
+					grid2[Y][X] = 1;
 				}
 
-				else if (direction == 3 && grid[Y][X] == 0
-						&& grid[Y][X + size] <= 0) {
-					grid[Y][X + size] = 1;
-					grid[Y][X] = 1;
+				else if (direction == 3 && grid2[Y][X] == 0
+						&& grid2[Y][X + size] <= 0) {
+					grid2[Y][X + size] = 1;
+					grid2[Y][X] = 1;
 				} else {
 					System.out.println("Can't put a ship there");
 				}
@@ -99,7 +100,7 @@ public class Exersise4 {
 				for (int i = 0; i < 3; i++) {
 					for (int j = 0; j < 3; j++) {
 
-						System.out.print(grid[i][j]);
+						System.out.print(grid2[i][j]);
 						System.out.print(" ");
 					}
 					System.out.print("\n");
