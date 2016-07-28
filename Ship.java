@@ -1,17 +1,22 @@
-
 public class Ship {
-	
-	public int direction = 0;                                   //direction the ship is traveling, i.e. north = 0, south = 1, east = 2 or west = 3
-	public int size = 0;                                       //length of ship
 
-	
-	public Ship(int a, int b) {
-		direction = a;
-		size = b;
-
+	public int Direction(int a) {
+		int direction = a;
+		return direction;
 	}
-	 //int[][] position;                                 //[x][y] position of the front of the ship
-	//String name;                                      //battleship, sub, carrier, ect
-	
-}
 
+	public int Size(int a) {
+		int size = a;
+		return size;
+	}
+
+	public int X(int a) {
+		int X = a;
+		return X;
+	}
+
+	public int Y(int a) {
+		int Y = a;
+		return Y;
+	}
+}
