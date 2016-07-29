@@ -1,114 +1,60 @@
 import java.util.Scanner;
 
+
+
 public class Exersise4 {
 
 	public static void main(String[] args) {
 
-		Board board = new Board();
-
-		int[][] grid1 = board.Board();
-		int[][] grid2 = board.Board();
 		
-		for (int k = 0; k < 2; k++) {
+		Scanner user_input = new Scanner(System.in);
+		Board b1 = new Board();
+		Board b2 = new Board();
+		Player P1 = new Player();
+		Player P2 = new Player();
+		b1.drawGrid();
+		b2.drawGrid();
+		
+		for (int k = 2; k < 6; k++) {
 
-			if (k % 2 <= 0) {                                             // even i = player 1
-                                                                         // odd i = player 2
-
-				Ship Patrol = new Ship();                           // direction, size, x-corad, y-coard
-				int X = Patrol.X(1);                               //
-				int Y = Patrol.Y(1);                              //
-				int direction = Patrol.Direction(0);             //
-				int size = Patrol.Size(1);                      // how long after the inital point,
-											                   // I.E. a patrol boat is two long so
-											                  // it's size is 1 as the initial
-											                 // point is already plotted.
-
-				if (direction == 0 && grid1[Y][X] == 0 
-						&& grid1[Y - size][X] <= 0) {
-					grid1[Y - size][X] = 1;
-					grid1[Y][X] = 1;
-				}
-
-				else if (direction == 1 && grid1[Y][X] == 0
-						&& grid1[Y + size][X] <= 0) {
-					grid1[Y + size][X] = 1;
-					grid1[Y][X] = 1;
-				}
-
-				else if (direction == 2 && grid1[Y][X] == 0
-						&& grid1[Y][X - size] <= 0) {
-					grid1[Y][X - size] = 1;
-					grid1[Y][X] = 1;
-				}
-
-				else if (direction == 3 && grid1[Y][X] == 0
-						&& grid1[Y][X + size] <= 0) {
-					grid1[Y][X + size] = 1;
-					grid1[Y][X] = 1;
-				} else {
-					System.out.println("Can't put a ship there");
-				}
-
-				for (int i = 0; i < 3; i++) {
-					for (int j = 0; j < 3; j++) {
-
-						System.out.print(grid1[i][j]);
-						System.out.print(" ");
-					}
-					System.out.print("\n");
-
-				}
-				System.out.print("\n");
-			} else {
-
-
-				Ship Patrol = new Ship();
-				int X = Patrol.X(2);
-				int Y = Patrol.Y(2);
-				int direction = Patrol.Direction(2);
-				int size = Patrol.Size(1);                         // how long after the inital point,
-											                      // I.E. a patrol boat is two long so
-											                     // it's size is 1 as the initial
-											                    // point is already plotted.
-
-				if (direction == 0 && grid2[Y][X] == 0 
-						&& grid2[Y - size][X] <= 0) {
-					grid2[Y - size][X] = 1;
-					grid2[Y][X] = 1;
-				}
-
-				else if (direction == 1 && grid2[Y][X] == 0
-						&& grid2[Y + size][X] <= 0) {
-					grid2[Y + size][X] = 1;
-					grid2[Y][X] = 1;
-				}
-
-				else if (direction == 2 && grid2[Y][X] == 0
-						&& grid2[Y][X - size] <= 0) {
-					grid2[Y][X - size] = 1;
-					grid2[Y][X] = 1;
-				}
-
-				else if (direction == 3 && grid2[Y][X] == 0
-						&& grid2[Y][X + size] <= 0) {
-					grid2[Y][X + size] = 1;
-					grid2[Y][X] = 1;
-				} else {
-					System.out.println("Can't put a ship there");
-				}
-
-				for (int i = 0; i < 3; i++) {
-					for (int j = 0; j < 3; j++) {
-
-						System.out.print(grid2[i][j]);
-						System.out.print(" ");
-					}
-					System.out.print("\n");
-				}
+			if (k % 2 <= 0) {                                              // even i = player 1
+                                                                          // odd i = player 2	
+				
+				System.out.println("please enter the X-coardinate of your ship");
+				
+				int X = user_input.nextInt();
+				
+				System.out.println("please enter the Y-coardinate of your ship");
+				
+				int Y = user_input.nextInt();
+				
+				System.out.println("please enter the direction your ship is traveling. ( the coardinates you entered are the front of the ship, 0 = North, 1 = South, 2 = East and 3 = West");
+				
+				int direction = user_input.nextInt();
+				
+				P1 = new Player(X, Y, direction);
+				
+				b1.ShipPlacement(X, Y, direction, 1);                                      
 			}
-
-		}
-
+			else {
+				
+				System.out.println("please enter the X-coardinate of your ship");
+				
+				int X = user_input.nextInt();
+				
+				System.out.println("please enter the Y-coardinate of your ship");
+				
+				int Y = user_input.nextInt();
+				
+				System.out.println("please enter the direction your ship is traveling. ( the coardinates you entered are the front of the ship, 0 = North, 1 = South, 2 = East and 3 = West");
+				
+				int direction = user_input.nextInt();
+				
+				P2 = new Player(X, Y, direction);
+				
+				b2.ShipPlacement(X, Y, direction, 1);
+			}
 	}
-
+		user_input.close();
+}
 }
